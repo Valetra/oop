@@ -32,7 +32,7 @@ unsigned char Reverse(unsigned char byte)
 bool IsError(int countOfOptions, string firstOption)
 {
 	string digits = "0123456789";
-	if (countOfOptions != 2)
+	if (countOfOptions < 2)
 	{
 		cout << "Error!\nExpected Exercise2.exe <integer[0 - 255]>";
 		return true;
@@ -75,4 +75,9 @@ int main(int argc, char* argv[])
 			return 1;
 		}
 	}
+	else
+	{
+		return 1;
+	}
+	return 0;
 }
