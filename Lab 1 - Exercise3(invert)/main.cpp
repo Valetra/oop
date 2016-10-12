@@ -3,10 +3,10 @@
 #include <string>
 
 using namespace std;
+using Matrix3x3 = double[3][3];
 
-double matrix[3][3];
 
-int ReadMatrixFromFile(string fileName)
+bool ReadMatrixFromFile(string fileName, Matrix3x3 matrix)
 {
 	ifstream inputFile(fileName);
 	if (inputFile.is_open())
@@ -22,9 +22,9 @@ int ReadMatrixFromFile(string fileName)
 	else
 	{
 		cout << "Файл не был открыт.";
-		return 1;
+		return false;
 	}
-	return 0;
+	return true;
 }
 
 double CalcOfDeterminantMatrix2x2(double i1j1, double i2j1, double i1j2, double i2j2)
@@ -32,7 +32,7 @@ double CalcOfDeterminantMatrix2x2(double i1j1, double i2j1, double i1j2, double 
 	return (i1j1 * i2j2) - (i2j1 * i1j2);
 }
 
-double CalcOfDeterminantMatrix3x3()
+double CalcOfDeterminantMatrix3x3(Matrix3x3 const& matrix)
 {
 	return matrix[0][0] * (CalcOfDeterminantMatrix2x2(matrix[1][1], matrix[1][2], matrix[2][1], matrix[2][2]))
 		 - matrix[0][1] * (CalcOfDeterminantMatrix2x2(matrix[1][0], matrix[1][2], matrix[2][0], matrix[2][2]))
@@ -41,7 +41,7 @@ double CalcOfDeterminantMatrix3x3()
 
 
 
-void BuildMinorMatrix()
+void BuildMinorMatrix(Matrix3x3 matrix)
 {
 	double minorMatrix[3][3];
 	minorMatrix[0][0] = CalcOfDeterminantMatrix2x2(matrix[1][1], matrix[1][2], matrix[2][1], matrix[2][2]);
@@ -62,7 +62,7 @@ void BuildMinorMatrix()
 	}
 }
 
-void PrintMatrix()
+void PrintMatrix(Matrix3x3 const& matrix)
 {
 	for (int i = 0; i < 3; ++i)
 	{
@@ -74,7 +74,7 @@ void PrintMatrix()
 	}
 }
 
-void BuildMatrixOfAlgebraicAdditions()
+void BuildMatrixOfAlgebraicAdditions(Matrix3x3 matrix)
 {
 	matrix[0][1] *= -1;
 	matrix[1][2] *= -1;
@@ -82,7 +82,7 @@ void BuildMatrixOfAlgebraicAdditions()
 	matrix[1][0] *= -1;
 }
 
-void ConstructTransposeMatrix()
+void ConstructTransposeMatrix(Matrix3x3 matrix)
 {
 	double temp;
 	temp = matrix[0][1];
@@ -96,21 +96,35 @@ void ConstructTransposeMatrix()
 	matrix[2][1] = temp;
 }
 
+void BuildInverMatrix(Matrix3x3 matrix)
+{
+	for (int i = 0; i < 3; ++i)
+	{
+		for (int j = 0; j < 3; j++)
+		{
+			matrix[i][j] *= -1;
+		}
+	}
+}
+
 int main(int argc, char* argv[])
 {
 	setlocale(LC_ALL, "rus");
+
 	if (argc != 2)
 	{
 		cout << "Ожидался параметр - файл с матрицой 3х3\n";
 		return 1;
 	}
-	if (ReadMatrixFromFile(argv[1]) == 1)
+	Matrix3x3 matrix;
+	if (!ReadMatrixFromFile(argv[1], matrix))
 	{
 		return 1;
 	}
 	cout << "Данная матрица\n";
-	PrintMatrix();
-	double determinant = CalcOfDeterminantMatrix3x3();
+	
+	PrintMatrix(matrix);
+	double determinant = CalcOfDeterminantMatrix3x3(matrix);
 	if (determinant != 0)
 	{
 		cout << "\nОпределитель матрицы равен " << determinant << " и не равна 0 - это значит, что обратная матрица существует.\n";
@@ -120,23 +134,20 @@ int main(int argc, char* argv[])
 		cout << "\nДанная матрица не имеет обратной матрицы, потому что её определитель равен 0";
 		return 1;
 	}
-	BuildMinorMatrix();
+	BuildMinorMatrix(matrix);
 	cout << "\nМатрица миноров\n";
-	PrintMatrix();
+	
+	PrintMatrix(matrix);
 	cout << "\nМатрица алгебраических дополнений\n";
-	BuildMatrixOfAlgebraicAdditions();
-	PrintMatrix();
+	BuildMatrixOfAlgebraicAdditions(matrix);
+	
+	PrintMatrix(matrix);
 	cout << "\nТранспонированная матрица\n";
-	ConstructTransposeMatrix();
-	PrintMatrix();
+	ConstructTransposeMatrix(matrix);
+	
+	PrintMatrix(matrix);
 	cout << "Обратная матрица\n";
-	for (int i = 0; i < 3; ++i)
-	{
-		for (int j = 0; j < 3; j++)
-		{
-			matrix[i][j] *= -1;
-		}
-	}
-	PrintMatrix();
+	BuildInverMatrix(matrix);
+	PrintMatrix(matrix);
 	return 0;
 }

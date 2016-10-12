@@ -1,4 +1,4 @@
-set PROGRAM="%~1"
+set PROGRAM="Debug\Inver.exe"
 
 %PROGRAM% "matrix.txt"
 if %ERRORLEVEL% EQU 1 goto err
