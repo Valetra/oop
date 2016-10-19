@@ -21,52 +21,48 @@ flipbyte.exe 6
 
 using namespace std;
 
-unsigned char Reverse(unsigned char byte)
+unsigned char ReverseBytes(unsigned char byte)
 {
-	byte = (byte & 0b11110000) >> 4 | (byte & 0b00001111) << 4;
-	byte = (byte & 0b11001100) >> 2 | (byte & 0b00110011) << 2;
-	byte = (byte & 0b10101010) >> 1 | (byte & 0b01010101) << 1;
+	byte = (byte & 0xF0) >> 4 | (byte & 0x0F) << 4;
+	byte = (byte & 0xCC) >> 2 | (byte & 0x33) << 2;
+	byte = (byte & 0xAA) >> 1 | (byte & 0x55) << 1;
 	return byte;
 }
 
-bool IsError(int countOfOptions, string firstOption)
+bool CheckArguments(int countOfOptions, string firstOption)
 {
 	string digits = "0123456789";
 	if (countOfOptions != 2)
 	{
 		cout << "Error!\nExpected Exercise2.exe <integer[0 - 255]>";
-		return true;
+		return false;
 	}
 
 	for (unsigned int i = 0; i < firstOption.length(); ++i)
 	{
-		bool found = false;
-		for (unsigned int j = 0; j < digits.length(); ++j)
-		{
-			if (firstOption[i] == digits[j])
-			{
-				found = true;
-			}
-		}
-		if (found == false)
+		if (!isdigit(firstOption[i]))
 		{
 			cout << "Error!\nIt was not handed over to the digital option";
-			return true;
+			return false;
 		}
 	}
-	return false;
+	return true;
 }
 
 int main(int argc, char* argv[])
 {
-	if (!IsError(argc, argv[1]))
+	if (!CheckArguments(argc, argv[1]))
+	{
+		return 1;
+	}
+	else
 	{
 		string firstOption = argv[1];
 		int digit = atoi(firstOption.c_str());
 		if (digit >= 0 && digit <= 255)
 		{
 			unsigned char byte = digit;
-			cout << (int)Reverse(byte) << endl;
+			cout << static_cast<int>(ReverseBytes(byte));
 			return 0;
 		}
 		else
