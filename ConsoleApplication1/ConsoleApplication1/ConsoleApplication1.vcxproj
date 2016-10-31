@@ -19,9 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{3C5B3411-E933-455F-B7D0-32ED7DFBA07C}</ProjectGuid>
+    <ProjectGuid>{62676A3E-BE3C-4F00-BA46-B5775F5717FB}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>Lab2Exercise1variant1test</RootNamespace>
+    <RootNamespace>ConsoleApplication1</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -142,13 +142,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\Lab 2 - Exercise1(variant 1)\processVector.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="processVectorTest.cpp" />
-    <ClCompile Include="stdafx.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="stdafx.h" />
+    <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
