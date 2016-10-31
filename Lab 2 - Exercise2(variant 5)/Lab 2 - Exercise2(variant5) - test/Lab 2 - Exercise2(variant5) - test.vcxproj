@@ -19,9 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{1247B7B3-BE48-4D7B-AAF2-3D034E1475DB}</ProjectGuid>
+    <ProjectGuid>{49605CDE-79B7-4073-B866-90B1AFBA6AE8}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>HTMLDecode</RootNamespace>
+    <RootNamespace>Lab2Exercise2variant5test</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -142,12 +142,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="processHTMLCode.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="processHTMLCode.h" />
-    <ClInclude Include="stdafx.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
