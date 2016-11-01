@@ -78,4 +78,5 @@ void ProcessVector(std::vector<double> &numbers)
 	AddingNumberToAllElements(numbers, SumOfPositiveElements(numbers));
 	sort(numbers.begin(), numbers.end());
 	copy(numbers.begin(), numbers.end(), std::ostream_iterator<double>(std::cout, ", "));
+	std::cout << '\n';
 }
