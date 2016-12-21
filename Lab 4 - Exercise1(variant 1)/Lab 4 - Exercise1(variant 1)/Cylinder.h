@@ -1,12 +1,18 @@
-#include "Round.h"
-#include "Height.h"
+#pragma once
+#include "Body.h"
 
-class CCylinder : public CRound, public CHeight
+class CCylinder final:
+	public CBody
 {
 public:
-	CCylinder(double radius, double height, double volume, double density);
+	CCylinder(double density, double height, double radius);
 	~CCylinder();
 
-	std::string ToString() const;
-};
+	double GetRadius()const;
+	double GetHeight()const;
+	double GetVolume()const override;
 
+private:
+	double m_height;
+	double m_radius;
+};

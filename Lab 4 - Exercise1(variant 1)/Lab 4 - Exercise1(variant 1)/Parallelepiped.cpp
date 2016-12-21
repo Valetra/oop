@@ -1,40 +1,38 @@
+#include "stdafx.h"
 #include "Parallelepiped.h"
 
-
-
-CParallelepiped::CParallelepiped(double height, double width, double depth, double volume, double density) : CHeight(height, volume, density)
-, m_width(0)
-, m_depth(0)
+CParallelepiped::CParallelepiped(double density, double width, double height, double depth)
+	:CBody("Parallelepiped", density)
+	, m_width(width)
+	, m_height(height)
+	, m_depth(depth)
 {
-	m_width = width;
-	m_depth = depth;
+	if (density < 0 || width < 0 || height < 0 || depth < 0)
+	{
+		throw std::invalid_argument("Parameters must not be negative");
+	}
 }
-
 
 CParallelepiped::~CParallelepiped()
 {
 }
 
+double CParallelepiped::GetVolume()const
+{
+	return m_depth * m_width * m_height;
+}
 
-// Возвращает ширину
-double CParallelepiped::GetWidth() const
+double CParallelepiped::GetWidth()const
 {
 	return m_width;
 }
 
-// Возвращает глубину
-double CParallelepiped::GetDepth() const
+double CParallelepiped::GetHeight()const
 {
-	return m_depth;
+	return m_height;
 }
 
-std::string CParallelepiped::ToString() const
+double CParallelepiped::GetDepth()const
 {
-	std::string info = "Height: " + std::to_string(GetHight()) + "\n"
-		+ "Width: " + std::to_string(GetWidth()) + "\n"
-		+ "Depth: " + std::to_string(GetDepth()) + "\n"
-		+ "Volume: " + std::to_string(CBody::GetVolume()) + "\n"
-		+ "Density: " + std::to_string(CBody::GetDensity()) + "\n"
-		+ "Mass: " + std::to_string(CBody::GetMass()) + "\n";
-	return info;
+	return m_depth;
 }

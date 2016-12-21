@@ -2,7 +2,6 @@
 
 #include <iostream>
 
-
 //Класс, моделирующий рациональное число
 
 class CRational final

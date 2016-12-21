@@ -1,7 +1,17 @@
+#include "stdafx.h"
 #include "Cylinder.h"
 
-CCylinder::CCylinder(double radius, double height, double volume, double density) : CRound(radius, volume, density), CHeight(height, volume, density)
+
+
+CCylinder::CCylinder(double density, double height, double radius)
+	:CBody("Cylinder", density)
+	, m_height(height)
+	, m_radius(radius)
 {
+	if (density < 0 || radius < 0 || height < 0)
+	{
+		throw std::invalid_argument("Parameters must not be negative");
+	}
 }
 
 
@@ -9,12 +19,18 @@ CCylinder::~CCylinder()
 {
 }
 
-std::string CCylinder::ToString() const
+double CCylinder::GetHeight()const
 {
-	std::string info = "Radius: " + std::to_string(GetRadius()) + "\n"
-		+ "Height: " + std::to_string(GetHight()) + "\n"
-		+ "Volume: " + std::to_string(CBody::GetVolume()) + "\n"
-		+ "Density: " + std::to_string(CBody::GetDensity()) + "\n"
-		+ "Mass: " + std::to_string(CBody::GetMass()) + "\n";
-	return info;
+	return m_height;
+}
+
+
+double CCylinder::GetVolume()const
+{
+	return (M_PI * pow(m_radius, 2) * m_height);
+}
+
+double CCylinder::GetRadius()const
+{
+	return m_radius;
 }

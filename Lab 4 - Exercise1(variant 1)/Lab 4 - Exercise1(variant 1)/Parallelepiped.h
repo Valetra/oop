@@ -1,20 +1,20 @@
-#include "Height.h"
+#pragma once
+#include "Body.h"
 
-class CParallelepiped : public CHeight
+class CParallelepiped final:
+	public CBody
 {
 public:
-	CParallelepiped(double height, double width, double depth, double volume, double density);
+	CParallelepiped(double density, double width, double height, double depth);
 	~CParallelepiped();
-	// Возвращает ширину
-	double GetWidth() const;
-	// Возвращает глубину
-	double GetDepth() const;
 
-	std::string ToString() const;
+	double CParallelepiped::GetVolume()const override;
+	double CParallelepiped::GetWidth()const;
+	double CParallelepiped::GetHeight()const;
+	double CParallelepiped::GetDepth()const;
+
 private:
-	// Ширина
 	double m_width;
-	// Глубина
+	double m_height;
 	double m_depth;
 };
-

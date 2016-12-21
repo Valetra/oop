@@ -1,8 +1,16 @@
+#include "stdafx.h"
 #include "Sphere.h"
-#include "Body.h"
 
-CSphere::CSphere(double radius, double volume, double density) : CRound(radius, volume, density)
+
+CSphere::CSphere(double density, double radius)
+	:CBody("Sphere", density)
+		, m_radius(radius)
 {
+	if (density < 0 || radius < 0)
+	{
+		throw std::invalid_argument("Parameters must not be negative");
+	}
+	
 }
 
 
@@ -10,11 +18,13 @@ CSphere::~CSphere()
 {
 }
 
-std::string CSphere::ToString() const
+
+double CSphere::GetRadius()const
 {
-	std::string info = "Radius: " + std::to_string(GetRadius()) + "\n"
-		+ "Volume: " + std::to_string(GetVolume()) + "\n"
-		+ "Density: " + std::to_string(GetDensity()) + "\n"
-		+ "Mass: " + std::to_string(GetMass()) + "\n";
-	return info;
+	return m_radius;
+}
+
+double CSphere::GetVolume()const
+{
+	return (pow(m_radius, 3) * M_PI) * 4.0f / 3.0f;
 }

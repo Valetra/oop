@@ -1,12 +1,18 @@
-#include "Round.h"
-#include "Height.h"
+#pragma once
+#include "Body.h"
 
-class CCone : public CRound, public CHeight
+class CCone final:
+	public CBody
 {
 public:
-	CCone(double radius, double height, double mass, double density);
+	CCone(double density, double height, double radius);
 	~CCone();
 
-	std::string ToString() const;
-};
+	double GetRadius()const;
+	double GetHeight()const;
+	double GetVolume()const override;
 
+private:
+	double m_height;
+	double m_radius;
+};

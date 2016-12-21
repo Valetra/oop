@@ -1,18 +1,36 @@
+#include "stdafx.h"
 #include "Cone.h"
 
-CCone::CCone(double radius, double height, double volume, double density) : CRound(radius, volume, density), CHeight(height, volume, density)
+
+CCone::CCone(double density, double height, double radius)
+	:CBody("Cone", density)
+	, m_height(height)
+	, m_radius(radius)
 {
+	if (density < 0 || radius < 0 || height < 0)
+	{
+		throw std::invalid_argument("Parameters must not be negative");
+	}
 }
+
 
 CCone::~CCone()
 {
 }
 
-std::string CCone::ToString() const
+
+
+double CCone::GetHeight()const
 {
-	std::string info = "Radius: " + std::to_string(GetRadius()) + "\n"
-		+ "Volume: " + std::to_string(CBody::GetVolume()) + "\n"
-		+ "Density: " + std::to_string(CBody::GetDensity()) + "\n"
-		+ "Mass: " + std::to_string(CBody::GetMass()) + "\n";
-	return info;
+	return m_height;
+}
+
+double CCone::GetVolume()const
+{
+	return (1.0f / 3.0f * M_PI * pow(m_radius, 2) * m_height);
+}
+
+double CCone::GetRadius()const
+{
+	return m_radius;
 }

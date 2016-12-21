@@ -19,7 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{713AC4A9-1823-4C44-A43E-7B9A51F6539A}</ProjectGuid>
+    <ProjectGuid>{DAEEA5CB-DC4B-49F4-A8A4-D26EF676B1F8}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>Lab4Exercise1variant1</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
@@ -142,23 +142,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Body.cpp" />
-    <ClCompile Include="Cone.cpp" />
-    <ClCompile Include="Cylinder.cpp" />
-    <ClCompile Include="Height.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="Parallelepiped.cpp" />
-    <ClCompile Include="Round.cpp" />
-    <ClCompile Include="Sphere.cpp" />
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="Body.h" />
     <ClInclude Include="Cone.h" />
     <ClInclude Include="Cylinder.h" />
-    <ClInclude Include="Height.h" />
     <ClInclude Include="Parallelepiped.h" />
-    <ClInclude Include="Round.h" />
     <ClInclude Include="Sphere.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Body.cpp" />
+    <ClCompile Include="Cone.cpp" />
+    <ClCompile Include="Cylinder.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Parallelepiped.cpp" />
+    <ClCompile Include="Sphere.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

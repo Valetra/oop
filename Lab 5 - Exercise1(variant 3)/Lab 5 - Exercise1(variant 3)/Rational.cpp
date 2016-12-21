@@ -78,31 +78,18 @@ const CRational operator+(CRational const& r1, CRational const& r2)
 
 const CRational operator-(CRational const& r1, CRational const& r2)
 {
-	int numerator = r1.GetNumerator() * r2.GetDenominator() - r2.GetNumerator() * r1.GetDenominator();
-	int denominator = r1.GetDenominator() * r2.GetDenominator();
-	return CRational(numerator, denominator);
+	return r1 + -r2;
 }
 
 CRational & CRational::operator+=(CRational const& r)
 {
-	if (r.GetNumerator() == 0)
-	{
-		return *this;
-	}
-	auto lcm = LCM(GetDenominator(), r.GetDenominator());
-	Assign(GetNumerator() * (lcm / r.GetDenominator()) + r.GetNumerator() * (lcm / GetDenominator()), lcm);
+	*this = *this + r;
 	return *this;
 }
 
 CRational & CRational::operator-=(CRational const& r)
 {
-	if (r.GetNumerator() == 0)
-	{
-		return *this;
-	}
-	auto lcm = LCM(GetDenominator(), r.GetDenominator());
-	Assign(r.GetNumerator() * (lcm / GetDenominator()) - GetNumerator() * (lcm / r.GetDenominator()), lcm);
-	return *this;
+	return *this += -r;
 }
 
 const CRational operator*(CRational const& r1, CRational const& r2)
@@ -112,19 +99,18 @@ const CRational operator*(CRational const& r1, CRational const& r2)
 
 const CRational operator/(CRational const& r1, CRational const& r2)
 {
-	return CRational(r1.GetNumerator() * r2.GetDenominator(), r1.GetDenominator() * r2.GetNumerator());
+	return r1 * CRational(r2.GetDenominator(), r2.GetNumerator());
 }
 
 CRational & CRational::operator*=(CRational const& r)
 {
-	Assign(m_numerator * r.GetNumerator(), m_denominator * r.GetDenominator());
+	*this = *this * r;
 	return *this;
 }
 
 CRational & CRational::operator/=(CRational const& r)
 {
-	Assign(m_numerator * r.GetDenominator(), m_denominator * r.GetNumerator());
-	return *this;
+	return *this *= CRational(r.GetDenominator(), r.GetNumerator());
 }
 
 const bool operator == (CRational const& r1, CRational const& r2)
@@ -134,7 +120,7 @@ const bool operator == (CRational const& r1, CRational const& r2)
 
 const bool operator != (CRational const& r1, CRational const& r2)
 {
-	return (r1.GetNumerator() != r2.GetNumerator() || r1.GetDenominator() != r2.GetDenominator());
+	return (!(r1 == r2));
 }
 
 const bool operator<(CRational const& r1, CRational const& r2)
@@ -144,7 +130,7 @@ const bool operator<(CRational const& r1, CRational const& r2)
 
 const bool operator>(CRational const& r1, CRational const& r2)
 {
-	return (r1.GetNumerator() * r2.GetDenominator() > r2.GetNumerator() * r1.GetDenominator());
+	return (!(r1 < r2) && (r1 != r2));
 }
 
 const bool operator<=(CRational const& r1, CRational const& r2)

@@ -1,26 +1,16 @@
 #pragma once
-#include <string>
+
 class CBody
 {
 public:
-	CBody(double volume, double density);
-	~CBody() = default;
-
-	// Плотность
+	CBody(const std::string & type, double density);
+	~CBody();
 	double GetDensity() const;
-
-	// Объём
-	double GetVolume() const;
-
-	// Масса
+	virtual double GetVolume() const = 0;
 	double GetMass() const;
-
-	// Вывод информации о теле
-	virtual std::string ToString() const = 0;
+	std::string ToString() const;
 
 private:
-	// Плотность
 	double m_density;
-	double m_volume;
+	std::string m_type;
 };
-

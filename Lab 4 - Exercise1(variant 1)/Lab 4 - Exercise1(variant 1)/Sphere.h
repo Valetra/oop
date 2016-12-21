@@ -1,10 +1,16 @@
-#include "Round.h"
+#pragma once
+#include "Body.h"
 
-class CSphere : public CRound
+class CSphere final:
+	public CBody
 {
 public:
-	CSphere(double radius, double volume, double density);
+	CSphere(double density, double radius);
 	~CSphere();
 
-	std::string ToString() const;
+	double CSphere::GetRadius()const;
+	double CSphere::GetVolume()const override;
+
+private:
+	double m_radius;
 };
