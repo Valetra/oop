@@ -90,7 +90,7 @@ BOOST_AUTO_TEST_CASE(Check_CCone_with_not_negative_arguments)
 	BOOST_CHECK(cone.GetHeight() == 5);
 	BOOST_CHECK(cone.GetRadius() == 10);
 
-	BOOST_CHECK(cone.GetVolume() == (1 / 3) * M_PI * pow(cone.GetRadius(), 2) * cone.GetHeight());
+	BOOST_CHECK(cone.GetVolume() == (1.0f / 3.0f) * M_PI * pow(cone.GetRadius(), 2) * cone.GetHeight());
 	BOOST_CHECK(cone.GetMass() == cone.GetVolume() * cone.GetDensity());
 }
 

@@ -30,7 +30,7 @@ int main()
 			std::cout << "density: ";
 			std::cin >> density;
 			std::cout << "\n";
-		
+
 			std::cout << "width: ";
 			std::cin >> width;
 			std::cout << "\n";
@@ -38,7 +38,7 @@ int main()
 			std::cout << "height: ";
 			std::cin >> height;
 			std::cout << "\n";
-		
+
 			std::cout << "depth: ";
 			std::cin >> depth;
 			std::cout << "\n";
