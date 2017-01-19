@@ -19,9 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{C044B309-7030-4602-9CA2-E952BBC2AFF6}</ProjectGuid>
+    <ProjectGuid>{DA7C451F-8A7D-4820-ACC6-D6B24FC5A7F3}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>Lab6Exercise1variant7ver20</RootNamespace>
+    <RootNamespace>Test</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -142,16 +142,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\Git_Repositories\Vika-oop\oop\lab6\HTTP_URL\HTTP_URL\CHttpUrl.cpp" />
-    <ClCompile Include="..\..\..\Git_Repositories\Vika-oop\oop\lab6\HTTP_URL\HTTP_URL\CUrlParsingError.cpp" />
-    <ClCompile Include="..\..\..\Git_Repositories\Vika-oop\oop\lab6\HTTP_URL\HTTP_URL\main.cpp" />
-    <ClCompile Include="..\..\..\Git_Repositories\Vika-oop\oop\lab6\HTTP_URL\HTTP_URL\stdafx.cpp" />
+    <ClInclude Include="athlete.h" />
+    <ClInclude Include="stdafx.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\Git_Repositories\Vika-oop\oop\lab6\HTTP_URL\HTTP_URL\CHttpUrl.h" />
-    <ClInclude Include="..\..\..\Git_Repositories\Vika-oop\oop\lab6\HTTP_URL\HTTP_URL\CUrlParsingError.h" />
-    <ClInclude Include="..\..\..\Git_Repositories\Vika-oop\oop\lab6\HTTP_URL\HTTP_URL\stdafx.h" />
-    <ClInclude Include="..\..\..\Git_Repositories\Vika-oop\oop\lab6\HTTP_URL\HTTP_URL\targetver.h" />
+    <ClCompile Include="FindMaxTest.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="stdafx.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

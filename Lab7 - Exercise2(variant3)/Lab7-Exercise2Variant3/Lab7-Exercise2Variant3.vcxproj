@@ -19,9 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{0C8A41D9-BEEC-46D9-8CF4-DDB7684CF80D}</ProjectGuid>
+    <ProjectGuid>{1B81A065-E9F3-47DD-9B92-1BA192E1F038}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>Lab6Exercise1variant7ver20test</RootNamespace>
+    <RootNamespace>Lab7Exercise2Variant3</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -142,15 +142,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\Git_Repositories\Vika-oop\oop\lab6\HTTP_URL\HTTP_URLTests\HTTP_URLTests.cpp" />
-    <ClCompile Include="..\..\..\Git_Repositories\Vika-oop\oop\lab6\HTTP_URL\HTTP_URLTests\main.cpp" />
-    <ClCompile Include="..\..\..\Git_Repositories\Vika-oop\oop\lab6\HTTP_URL\HTTP_URLTests\stdafx.cpp" />
-    <ClCompile Include="..\..\..\Git_Repositories\Vika-oop\oop\lab6\HTTP_URL\HTTP_URL\CHttpUrl.cpp" />
-    <ClCompile Include="..\..\..\Git_Repositories\Vika-oop\oop\lab6\HTTP_URL\HTTP_URL\CUrlParsingError.cpp" />
+    <ClCompile Include="MyList.cpp" />
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\Git_Repositories\Vika-oop\oop\lab6\HTTP_URL\HTTP_URLTests\stdafx.h" />
-    <ClInclude Include="..\..\..\Git_Repositories\Vika-oop\oop\lab6\HTTP_URL\HTTP_URLTests\targetver.h" />
+    <ClInclude Include="MyList.h" />
+    <ClInclude Include="MyListIterator.h" />
+    <ClInclude Include="MyListNode.h" />
+    <ClInclude Include="stdafx.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -15,28 +15,22 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\Git_Repositories\Vika-oop\oop\lab6\HTTP_URL\HTTP_URLTests\HTTP_URLTests.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\Git_Repositories\Vika-oop\oop\lab6\HTTP_URL\HTTP_URLTests\main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\Git_Repositories\Vika-oop\oop\lab6\HTTP_URL\HTTP_URLTests\stdafx.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\Git_Repositories\Vika-oop\oop\lab6\HTTP_URL\HTTP_URL\CHttpUrl.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\Git_Repositories\Vika-oop\oop\lab6\HTTP_URL\HTTP_URL\CUrlParsingError.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
+    <ClInclude Include="athlete.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\Git_Repositories\Vika-oop\oop\lab6\HTTP_URL\HTTP_URLTests\stdafx.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\Git_Repositories\Vika-oop\oop\lab6\HTTP_URL\HTTP_URLTests\targetver.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
+    <ClCompile Include="FindMaxTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

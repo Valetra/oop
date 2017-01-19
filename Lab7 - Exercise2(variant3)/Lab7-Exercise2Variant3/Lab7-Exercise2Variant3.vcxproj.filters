@@ -15,21 +15,24 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\Git_Repositories\OOP\Lab_7\FindMaxExTest\FindMaxTest.cpp">
+    <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Git_Repositories\OOP\Lab_7\FindMaxExTest\main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\Git_Repositories\OOP\Lab_7\FindMaxExTest\stdafx.cpp">
+    <ClCompile Include="MyList.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\Git_Repositories\OOP\Lab_7\FindMaxExTest\athlete.h">
+    <ClInclude Include="stdafx.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Git_Repositories\OOP\Lab_7\FindMaxExTest\stdafx.h">
+    <ClInclude Include="MyList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MyListIterator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MyListNode.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

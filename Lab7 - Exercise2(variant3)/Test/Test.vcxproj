@@ -19,9 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{ED742C21-4614-4B7D-A643-07E3596822B1}</ProjectGuid>
+    <ProjectGuid>{43B89A42-7FD3-4F46-AFFE-90EEF1A4A738}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>Lab7Exercise1variant3test</RootNamespace>
+    <RootNamespace>Test</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -93,6 +93,9 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <PostBuildEvent>
+      <Command>"$(TargetPath)" --log_level=test_suite</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -142,13 +145,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\Git_Repositories\OOP\Lab_7\FindMaxExTest\FindMaxTest.cpp" />
-    <ClCompile Include="..\..\..\Git_Repositories\OOP\Lab_7\FindMaxExTest\main.cpp" />
-    <ClCompile Include="..\..\..\Git_Repositories\OOP\Lab_7\FindMaxExTest\stdafx.cpp" />
+    <ClInclude Include="stdafx.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\Git_Repositories\OOP\Lab_7\FindMaxExTest\athlete.h" />
-    <ClInclude Include="..\..\..\Git_Repositories\OOP\Lab_7\FindMaxExTest\stdafx.h" />
+    <ClCompile Include="..\Lab7-Exercise2Variant3\MyList.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="MyListTest.cpp" />
+    <ClCompile Include="stdafx.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -19,11 +19,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{9F78BD8B-8BB8-471E-B64C-1D28B4DFFCE5}</ProjectGuid>
+    <ProjectGuid>{A89D2F79-E1A7-462F-AB3E-11C2A3656D78}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>Lab7Exercise2variant1</RootNamespace>
+    <RootNamespace>Lab7Exercise1variant3</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
-    <ProjectName>Lab 7 - Exercise1(variant3)</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -143,10 +142,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\Git_Repositories\OOP\Lab_7\FindMaxEx\main.cpp" />
+    <ClInclude Include="FindMax.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\Git_Repositories\OOP\Lab_7\FindMaxEx\FindMax.h" />
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

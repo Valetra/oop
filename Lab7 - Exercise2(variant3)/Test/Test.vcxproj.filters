@@ -15,31 +15,22 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\Git_Repositories\Vika-oop\oop\lab6\HTTP_URL\HTTP_URL\CHttpUrl.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\Git_Repositories\Vika-oop\oop\lab6\HTTP_URL\HTTP_URL\CUrlParsingError.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\Git_Repositories\Vika-oop\oop\lab6\HTTP_URL\HTTP_URL\main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\Git_Repositories\Vika-oop\oop\lab6\HTTP_URL\HTTP_URL\stdafx.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\Git_Repositories\Vika-oop\oop\lab6\HTTP_URL\HTTP_URL\CHttpUrl.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\Git_Repositories\Vika-oop\oop\lab6\HTTP_URL\HTTP_URL\CUrlParsingError.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\Git_Repositories\Vika-oop\oop\lab6\HTTP_URL\HTTP_URL\stdafx.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\Git_Repositories\Vika-oop\oop\lab6\HTTP_URL\HTTP_URL\targetver.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Lab7-Exercise2Variant3\MyList.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MyListTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
